@@ -9,3 +9,8 @@
 <h1>3. wrong answer</h1>
 <img src="https://github.com/lsg000112/descretemath/blob/main/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-10-14%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%203.30.37.png" height=300>
 
+<h1>Output 1,2 (n=5)</h1>
+<img src="https://github.com/lsg000112/descretemath/blob/main/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-10-14%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%203.40.30.png" width=200>
+
+<h1>Output 1,2 (n=8)</h1>
+<img src="https://github.com/lsg000112/descretemath/blob/main/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-10-14%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%203.41.01.png" width=200>
