@@ -7,12 +7,14 @@ button = []
 win = tkinter.Tk()
 n = 0
 
-def isValid(row, col): #check clicked n cells and return True if it satisfy n-queen rule
-    for i in range(0, row):
-        if col[i] == col[row]:
-            return False
-        if abs(col[i]-col[row]) == abs(i-row):
-            return False
+def isValid(col): #check clicked n cells and return True if it satisfy n-queen rule
+    global n
+    for i in range(0, n):
+        for j in range(i+1, n):
+            if col[i] == col[j]:
+                return False
+            if abs(col[i]-col[j]) == abs(i-j):
+                return False
     return True
 
 def button_click(value):
@@ -23,7 +25,7 @@ def button_click(value):
     print(value + ' clicked')
     if cnt == n-1 and bt[n*row+col]['text'] == 'X': # if n buttons are clicked, check validity
         column[row] = col
-        if isValid(n-1, column) and (-1 not in column):
+        if isValid(column) and (-1 not in column):
             bt[n*row+col].configure(text='Queen')
             alert('Complete!')
             for i in range(n):
@@ -39,7 +41,7 @@ def button_click(value):
             cnt += 1
         else:
             bt[n*row+col].configure(text='X')
-            column[row] = 0
+            column[row] = -1
             cnt -= 1
 
 def alert(msg):
@@ -49,12 +51,13 @@ def pressed():
     n = int(textfield.get())
 
 def set_n(num):
-    global n, button
+    global n
+    global button
     n = num
-    print(button)
     for i in range(4):
         for j in range(5):
-            button[(i+1)*(j+1)].destroy()
+            if (i*5)+(j+1) > 3:
+                button[(i*5)+(j+1)].destroy()
     start_game()
 
 def start_game():
@@ -70,8 +73,9 @@ def start_game():
 if __name__ == "__main__":
     win.title('choose level (n)')
     button = [0] * 21
-    for i in range(4): 
+    for i in range(4):
         for j in range(5):
-            button[(i+1)*(j+1)] = tkinter.Button(win, text = (str)((i+1)*(j+1)), width=5, height=3, command= lambda value=(i+1)*(j+1): set_n(value))
-            button[(i+1)*(j+1)].grid(column=j, row=i)
+            if (i*5)+(j+1) > 3:
+                button[(i*5)+(j+1)] = tkinter.Button(win, text = (str)((i*5)+(j+1)), width=5, height=3, command= lambda value=((i*5)+(j+1)): set_n(value))
+                button[(i*5)+(j+1)].grid(column=j, row=i)
     win.mainloop()
